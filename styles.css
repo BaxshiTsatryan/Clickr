@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: darkgray;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.button {
+    padding: 15px 25px;
+    border-radius: 6px;
+    background: #6E6D70;
+    cursor: pointer;
+    color: #DFDEDF;
+}
+
+.counter {
+    color: white;
+    margin-top: 20px;
+}
+
+.text {
+    color: white;
+    margin-bottom: 10px;
+}
+
+.reset {
+    display: none;
+    margin-top: 50px;
+}
