@@ -1,3 +1,8 @@
+// TODO Add the ability to select the time
+// TODO Make styles more beautiful
+// TODO Optimize the code
+// TODO Backend
+
 let count = 1;
 const TIMEOUT = 5000;
 
@@ -13,14 +18,17 @@ function incrementCounter() {
 }
 
 function startTimeOut() {
-    setTimeout(() => {
-        button.removeEventListener('click', incrementCounter);
-        button.removeEventListener('click', start);
-        text.textContent = `Game Over. Your score is ${count}`;
-        counter.textContent = '';
-        resetBtn.style.display = 'block';
-        resetBtn.addEventListener('click', reset)
-    }, TIMEOUT);
+    setTimeout(() => gameOver(), TIMEOUT);
+}
+
+function gameOver() {
+    button.removeEventListener('click', incrementCounter);
+    button.removeEventListener('click', start);
+    text.textContent = `Game Over. Your score is ${count}`;
+    counter.textContent = '';
+    button.style.display = 'none';
+    resetBtn.style.display = 'block';
+    resetBtn.addEventListener('click', reset)
 }
 
 function start() {
@@ -33,6 +41,7 @@ function reset() {
     button.removeEventListener('click', reset);
     count = 1;
     resetBtn.style.display = 'none';
+    button.style.display = 'block';
     text.textContent = '';
     start();
 }
